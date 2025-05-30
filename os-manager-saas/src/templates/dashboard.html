@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Gestão de Ordens de Serviço</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% extends "layout.html" %}
+    
+    {% block page_content %}
+    <h1 class="page-title">Dashboard</h1>
+    
+    <div class="dashboard-grid">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Ordens de Serviço</h3>
+            </div>
+            <div class="card-body">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Em Aberto</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">18</div>
+                        <div class="stat-label">Em Andamento</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">42</div>
+                        <div class="stat-label">Concluídas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Ativos</h3>
+            </div>
+            <div class="card-body">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">142</div>
+                        <div class="stat-label">Operacionais</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">14</div>
+                        <div class="stat-label">Em Manutenção</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Chamados Recentes</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ativo</th>
+                            <th>Tipo</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1234</td>
+                            <td>Motor Elétrico A-45</td>
+                            <td>Corretiva</td>
+                            <td><span class="badge badge-warning">Em Andamento</span></td>
+                            <td>28/05/2025</td>
+                        </tr>
+                        <tr>
+                            <td>#1233</td>
+                            <td>Bomba Hidráulica B-12</td>
+                            <td>Preventiva</td>
+                            <td><span class="badge badge-success">Concluído</span></td>
+                            <td>27/05/2025</td>
+                        </tr>
+                        <tr>
+                            <td>#1232</td>
+                            <td>Compressor C-08</td>
+                            <td>Corretiva</td>
+                            <td><span class="badge badge-danger">Pendente</span></td>
+                            <td>27/05/2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Programação do Dia</h3>
+            </div>
+            <div class="card-body">
+                <ul class="schedule-list">
+                    <li class="schedule-item">
+                        <div class="schedule-time">08:00</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Manutenção Preventiva - Linha de Produção A</div>
+                            <div class="schedule-description">Responsável: João Silva</div>
+                        </div>
+                    </li>
+                    <li class="schedule-item">
+                        <div class="schedule-time">10:30</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Inspeção de Segurança - Setor Elétrico</div>
+                            <div class="schedule-description">Responsável: Maria Oliveira</div>
+                        </div>
+                    </li>
+                    <li class="schedule-item">
+                        <div class="schedule-time">14:00</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Calibração de Equipamentos - Laboratório</div>
+                            <div class="schedule-description">Responsável: Carlos Santos</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
